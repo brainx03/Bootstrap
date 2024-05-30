@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .buttons{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        
+    }
+    button{
+        background-color: red;
+
+    }
+</style>
+<body>
+    
+    <div class="container">
+         <input type="text" id="num1" required>
+         
+    </div>
+    <div class="container">
+        
+        <input type="text" id="num2" required>
+   </div>
+         <div class="buttons">
+            <button id="btn"> + </button>
+   </div>
+</div>
+<div class="buttons">
+   <button id="btn2"> * </button>
+</div>
+   <p id="result"></p>
+
+
+
+   
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#btn').click(function(){
+            var firstNum = $('#num1').val()
+            var secondNum = $('#num2').val()
+
+            var number1  = parseFloat(firstNum);
+            var number2  =  parseFloat(secondNum);
+
+            var sum = number1 + number2;
+
+            $('p').text("The sum is " + sum);
+        });
+
+        $('#btn2').click(function(){
+            var firstNum = $('#num1').val()
+            var secondNum = $('#num2').val()
+
+            var number1  = parseFloat(firstNum);
+            var number2  =  parseFloat(secondNum);
+
+            var product = number1 * number2;
+
+            $('p').text("The product is " + product);
+        });
+
+
+    })
+</script>
+    
+</body>
+</html>

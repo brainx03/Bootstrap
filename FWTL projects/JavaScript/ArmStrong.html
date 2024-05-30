@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Checker</title>
+</head>
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <button onclick="checkArmstrong()">Check Armstrong Number</button>
+    <div id="output"></div>
+
+    <script>
+        // Function to check if a number is an Armstrong number
+        function isArmstrongNumber(num) {
+            let originalNum = num;
+            let sum = 0;
+            let numDigits = num.toString().length;
+
+            // Use a while loop to calculate the sum of digits raised to the power of numDigits
+            while (num > 0) {
+                let digit = num % 10;
+                sum += Math.pow(digit, numDigits);
+                num = Math.floor(num / 10);
+            }
+
+            // Check if the sum is equal to the original number
+            return sum === originalNum;
+        }
+
+        // Function to prompt user for a number and check if it is an Armstrong number
+        function checkArmstrong() {
+            let number = parseInt(prompt("Enter a number"));
+
+            // Check if the input is a valid number
+            if (isNaN(number)) {
+                alert("Please enter a valid number");
+                return;
+            }
+
+            let outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = ""; // Clear previous output
+
+            if (isArmstrongNumber(number)) {
+                outputDiv.innerHTML = `${number} is an Armstrong number.`;
+            } else {
+                outputDiv.innerHTML = `${number} is not an Armstrong number.`;
+            }
+        }
+    </script>
+</body>
+</html>

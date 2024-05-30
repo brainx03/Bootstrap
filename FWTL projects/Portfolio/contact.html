@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+    .navy{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style-type: none;
+        
+    }
+    h3{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .contact{
+    width:100%;
+    display: flex;
+    /* margin: 20px;
+    padding: 30px; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+
+   .btn{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   #mail{
+    margin: 20px;
+    padding-top: 20px;
+    border: 3px solid black
+   }
+
+   #text{
+    margin: 20px;
+    padding-top:20px ;
+    border: 3px solid black;
+   }
+   #name{
+    margin: 10px;
+    padding-top:20px;
+    border: 3px solid black;
+   }
+   button{
+    font-size: 10px;
+    background-color: aqua;
+   }
+   
+
+</style>
+<body>
+    
+    <header class="navbar">
+        <nav>
+            <ul class="navy">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h3>Contact Me</h3>
+
+    <form action="#" class="contact">
+        <input id="name" type="text" placeholder="Enter your name">
+        <input id="mail" type="gmail" placeholder="Enter your Gmail">
+       
+        <textarea name="msg" id="text"></textarea>
+    </form>
+
+   <div class="btn">
+    <button type="submit">Submit</button>
+   </div>
+
+</body>
+</html>

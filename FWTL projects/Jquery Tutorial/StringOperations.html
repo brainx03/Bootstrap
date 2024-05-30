@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+</head>
+<style>
+    #textInput{
+        display: flex;
+        justify-content: center;
+        border: 3px solid red;
+        margin-bottom: 10px;
+    }
+
+    #btn1{
+        border: 2px solid green;
+        border-radius: 5px;
+    }
+    #btn1{
+        border: 2px solid green;
+        border-radius: 5px;
+    }
+    #btn2{
+        border: 2px solid green;
+        border-radius: 5px;
+    }
+    #btn3{
+        border: 2px solid green;
+        border-radius: 5px;
+    }
+    #btn4{
+        border: 2px solid green;
+        border-radius: 5px;
+    }
+</style>
+<body>.
+    <div class="container">
+
+        <h1>String Operations</h1>
+        <div class="textField">
+            <input type="text" id="textInput" placeholder="Enter String"  required>
+        </div>
+
+        <div class="btn">
+            <button id="btn1">Check Length</button>
+            <p class="result1"></p>
+        </div>
+
+        <div class="btn">
+            <button id="btn2">Check Palindrome</button>
+            <p class="result2"></p>
+        </div>
+
+        <div class="btn">
+            <button id="btn3">Reverse String</button>
+            <p class="result3"></p>
+        </div>
+
+        <div class="btn">
+            <button id="btn4">LowerCase</button>
+            <p class="result4"></p>
+        </div>
+         
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                var input  = $("#textInput").val();
+                var llength = input.length;
+
+                $(".result1").text("The length of the string is " + llength );
+            });
+
+            // Check if Palindrome
+
+            $("#btn2").click(function(){
+                var input  = $("#textInput").val();
+                var palindrome  = input.split('').reverse().join('');
+                var palindromeCheck  = input === palindrome
+                $(".result2").text("This is " + palindromeCheck)
+                
+            })
+
+            // Reverse the string
+
+            $("#btn3").click(function(){
+                var input  = $("#textInput").val();
+                var rev  =  input.split('').reverse().join('');
+                $(".result3").text("The reverse of the string is " + rev)
+            });
+
+            $("#btn4").click(function(){
+                var input  =  $('#textInput').val();
+                var lowercase  = input.toLowerCase();
+                $(".result4").text(lowercase)
+            })
+        })
+    </script>
+</body>
+</html>

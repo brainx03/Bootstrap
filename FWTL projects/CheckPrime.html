@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Prime</title>
+</head>
+
+<style>
+    #text{
+        display: flex;
+        justify-content: center;
+        border: 3px solid green;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    #btn1{
+        margin-top: 10px;
+        background-color: pink;
+        border-radius: 10px;
+    }
+    #btn2{
+        margin-top: 10px;
+        background-color: yellow;
+        border-radius: 10px;
+    }
+
+    #btn3{
+        margin-top: 10px;
+        background-color: red;
+        border-radius: 10px;
+    }
+    .result{
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="container">
+        <input type="text" name="" id="textInput" placeholder="Enter Number">
+    </div>
+
+    <div class="buttons">
+        <button id="btn1"> Check Prime </button>
+    </div>
+    <div class="buttons">
+        <button id="btn2"> Check Armstrong </button>
+    </div>
+    <div class="buttons">
+        <button id="btn3"> Check Factorial </button>
+    </div>
+
+    <div class="result"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $("document").ready(function(){
+            
+            $("#btn1").click(function(){
+             var num  = $("#textInput").val();
+            for(let i  = 2; i < Math.sqrt(num); i++)
+            {
+                if(num % i == 0)
+                {
+                    $(".result").text("Not prime")
+                }
+                else
+                {
+                    $(".result").text("Prime")
+                }
+            }
+            });
+
+            $("#btn2").click(function(){
+                var num  = $("#textInput").val();
+
+                let sum = 0;
+                let temp  = num;
+
+                const numberOfDigits  =  num.toString().length;
+                while(temp > 0)
+                {
+                    let digit  = temp % 10;
+                    sum  += Math.pow(digit , numberOfDigits);
+                    temp  = Math.floor(temp / 10);
+                }
+                if(sum  == num)
+                {
+                    $('.result').text("The number is Armstrong")
+                }
+                else
+                {
+                    $('.result').text("The number is not Armstrong")
+                }
+
+            });
+
+            $("#btn3").click(function(){
+                var num = $("#textInput").val();
+                if(num == 0)
+                {
+                    $(".result").text("The factorial of the 0 is" + 1);
+                
+                }
+                let fact  = 1;
+                for(let i  = 1; i <= num; i++)
+                {
+                    fact *=i;
+                }
+                $(".result").text("The factorial of the given number is " + fact)
+            })
+            
+            
+        })
+    </script>
+</body>
+</html>

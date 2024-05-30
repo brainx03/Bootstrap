@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Paragraph Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .color-buttons {
+            margin-bottom: 20px;
+        }
+        .color-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .paragraph {
+            width: 60%;
+            padding: 20px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="color-buttons">
+        <button onclick="changeParagraphColor('red')" style="background-color: red; color: white;">Red</button>
+        <button onclick="changeParagraphColor('green')" style="background-color: green; color: white;">Green</button>
+        <button onclick="changeParagraphColor('blue')" style="background-color: blue; color: white;">Blue</button>
+        <button onclick="changeParagraphColor('yellow')" style="background-color: yellow; color: black;">Yellow</button>
+        <button onclick="changeParagraphColor('random')">Random</button>
+    </div>
+
+    <p id="paragraph" class="paragraph">
+        This is a paragraph. Click a button to change my background color.
+    </p>
+
+    <script>
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Function to change the background color of the paragraph
+        function changeParagraphColor(color) {
+            const paragraph = document.getElementById('paragraph');
+            if (color === 'random') {
+                paragraph.style.backgroundColor = getRandomColor();
+            } else {
+                paragraph.style.backgroundColor = color;
+            }
+        }
+    </script>
+
+</body>
+</html>

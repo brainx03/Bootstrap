@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .string-operations {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .string-operations input {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .string-operations button {
+            width: 48%;
+            padding: 10px;
+            font-size: 18px;
+            margin: 5px 1%;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .string-operations button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="string-operations">
+        <input type="text" id="inputString" placeholder="Enter a string">
+        <button onclick="findLength()">Find Length</button>
+        <button onclick="checkPalindrome()">Check Palindrome</button>
+        <button onclick="reverseString()">Reverse String</button>
+        <button onclick="convertCase()">Convert Case</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        // Function to find the length of the string
+        function findLength() {
+            let str = document.getElementById('inputString').value;
+            let length = str.length;
+            document.getElementById('result').innerHTML = `Length of the string: ${length}`;
+        }
+
+        // Function to check if the string is a palindrome
+        function checkPalindrome() {
+            let str = document.getElementById('inputString').value;
+            let reversedStr = str.split('').reverse().join('');
+            if (str === reversedStr) {
+                document.getElementById('result').innerHTML = `"${str}" is a palindrome.`;
+            } else {
+                document.getElementById('result').innerHTML = `"${str}" is not a palindrome.`;
+            }
+        }
+
+        // Function to reverse the string
+        function reverseString() {
+            let str = document.getElementById('inputString').value;
+            let reversedStr = str.split('').reverse().join('');
+            document.getElementById('result').innerHTML = `Reversed string: ${reversedStr}`;
+        }
+
+        // Function to convert the case of the string
+        function convertCase() {
+            let str = document.getElementById('inputString').value;
+            let convertedStr = '';
+            for (let char of str) {
+                if (char === char.toUpperCase()) {
+                    convertedStr += char.toLowerCase();
+                } else {
+                    convertedStr += char.toUpperCase();
+                }
+            }
+            document.getElementById('result').innerHTML = `Converted case string: ${convertedStr}`;
+        }
+    </script>
+</body>
+</html>

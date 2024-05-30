@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextArea</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    textarea{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+
+    button{
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #5cb85c;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+
+    button:hover{
+        background-color: #11f1cc;
+    }
+    p#result {
+    margin-top: 10px;
+    font-size: 18px;
+}
+</style>
+<body>
+    <div class="container">
+        <textarea id="textInput" name="textInput" rows="10" class="30" placeholder="Enter your text here..."></textarea>
+        <button id="checkLength">Check Length</button>
+        <br>
+        <button id="clear">Clear</button>
+        <p id="result"></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#checkLength").click(function(){
+                var textLength = $("#textInput").val().length;
+                $("#result").text("Length of the text: " + textLength);
+            });
+
+            $("#clear").click(function(){
+                $("#textInput").val('');
+                $('#result').text('');
+            })
+
+        })
+
+
+    </script>
+    <!-- <script src="textArea.html"></script> -->
+</body>
+</html>

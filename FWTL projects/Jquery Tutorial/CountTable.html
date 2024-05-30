@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Table 1</th>
+                <th>Table 1</th>
+                <th>Table 1</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1 , cell 1</td>
+                <td>Row 1 , cell 2</td>
+                <td>Row 1 , cell 3</td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr>
+                <td>Row 2 , cell 1</td>
+                <td>Row 2 , cell 2</td>
+                <td>Row 2 , cell 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $('#table').ready(function(){
+            var rowCount  = $('#table tbody tr').length;
+
+            var colCount  = $('#table  thead tr th').length;
+4
+            console.log(rowCount);
+            console.log(colCount);
+            // document.write(rowCount);
+            // document.write(colCount);
+        })
+    </script>
+</body>
+</html>

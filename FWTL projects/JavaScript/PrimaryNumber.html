@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary Number</title>
+</head>
+<body>
+    
+    <h1>Prime number Calculator</h1>
+    <button onclick="checkPrime()"> Check Prime</button>
+    <div id="output"></div>
+
+
+    <script>
+        function isPrime(num)
+        {
+            if(num <= 1)
+            {
+                return false;
+            }
+
+            for(let i  = 2; i <= Math.sqrt(num); i++)
+            {
+                if(num % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        function checkPrime()
+        {
+            let start  = parseInt(prompt("Enter the starting range"));
+            let end  = parseInt(prompt("Enter the ending range"));
+
+            if(isNaN(start) || isNaN(end) || start > end)
+            {
+                alert("Enter the valid range");
+                return;
+            }
+
+            let outputDiv  = document.getElementById("output");
+            outputDiv.innerHTML = " ";
+
+            for(let i = start; i <= end; i++)
+            {
+                if(isPrime(i))
+                {
+                     outputDiv.innerHTML += `The ${i} is prime number <br>`;
+                }
+                else{
+                    outputDiv.innerHTML += `The ${i} is not a prime number <br>`
+                }
+            }
+        }
+    </script>
+</body>
+</html>
